@@ -15,7 +15,8 @@ export class HomePage {
   ionViewDidLoad() {
 
    /*Initializing Map*/
-  mapboxgl.accessToken = '<your mapbox gl js access token>';
+   const ACCESS_TOKEN = 'pk.eyJ1IjoiYXVzdGtlIiwiYSI6ImNpd21uZTB1bDAwNm8yenF4ZmtlbjkzenUifQ.CohFKxWoYGrFXQDoRvZWag';
+   mapboxgl.accessToken = ACCESS_TOKEN;
   var map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/light-v9',
   center: [-74.0066, 40.7135],
