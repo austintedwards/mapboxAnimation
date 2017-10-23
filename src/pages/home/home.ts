@@ -26,22 +26,20 @@ export class HomePage {
     var url = 'https://wanderdrone.appspot.com/';
     map.on('load', function() {
       window.setInterval(function() {
-        map.getSource('movement').setData(url);
+        map.getSource('markers').setData(url);
       }, 50);
-
       map.loadImage('../assets/icon/bus-top-view.png', function(error, image) {
         if (error) throw error;
-        map.addSource('movement', { type: 'geojson', data: url });
+        map.addSource('markers', { type: 'geojson', data: url });
         map.addImage('bus', image);
         map.addLayer({
-          "id": "movingBus",
+          "id": "movement",
           "type": "symbol",
-          "source": "movement",
+          "source": "markers",
           "layout": {
             "icon-image": "bus",
             "icon-size": 0.15,
             "icon-rotate": 20
-
           }
         });
       });
